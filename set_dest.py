@@ -94,7 +94,7 @@ def main() -> int:
     if result.returncode != 0 and "nothing to commit" not in result.stdout:
         print(result.stdout, result.stderr)
         return 1
-    subprocess.run(["git", "push"], cwd=HERE, check=True)
+    subprocess.run(["git", "push", "origin", "main"], cwd=HERE, check=True)
 
     print(message)
     print("GitHub Pages への反映まで1〜2分かかります。")
